@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vacances en Famille — Paris & Andalousie · Juillet 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf5ee; --paper: #ffffff; --ink: #33271f; --soft-ink: #6b5848;
+  --muted: #a08d7c; --terra: #c8643c; --terra-deep: #a44a2a; --ochre: #d99a3a;
+  --blue: #2d6072; --blue-deep: #1d4452; --cream: #f3e9dc; --border: #ece0d2;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.55; overflow-x: hidden; }
+img { display:block; }
+
+/* ARABIC */
+.ar { font-family: 'Cairo', sans-serif; direction: rtl; unicode-bidi: isolate; }
+.ar-sub { display:block; font-family:'Cairo',sans-serif; direction:rtl; text-align:right; color:var(--muted); font-weight:500; font-size:0.94em; line-height:1.5; margin-top:3px; }
+.ar-h { display:block; font-family:'Cairo',sans-serif; direction:rtl; text-align:right; font-weight:700; color:var(--terra); margin-top:6px; }
+
+/* HERO */
+.hero { height: 90vh; min-height: 540px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 56px 40px; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background-image: url('trip_images/hero_eiffel.jpg'); background-size: cover; background-position: center; transform: scale(1.05); animation: slowZoom 20s ease-out forwards; }
+@keyframes slowZoom { to { transform: scale(1); } }
+.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(40,29,22,0.88) 0%, rgba(40,29,22,0.32) 55%, rgba(40,29,22,0.08) 100%); }
+.hero-content { position: relative; z-index: 2; color: #fff; max-width: 900px; }
+.hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); display: inline-block; padding: 8px 18px; border-radius: 100px; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+.hero h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(2.7rem, 8vw, 5.6rem); font-weight: 900; line-height: 0.98; letter-spacing: -0.02em; margin-bottom: 12px; text-shadow: 0 4px 30px rgba(0,0,0,0.3); opacity: 0; animation: fadeUp 0.9s ease forwards 0.4s; }
+.hero h1 em { font-style: italic; color: var(--ochre); }
+.hero-ar { font-family:'Cairo',sans-serif; direction:rtl; font-size: clamp(1.1rem,3vw,1.7rem); font-weight:600; color:#fff; opacity:0.95; margin-bottom:22px; text-shadow:0 2px 14px rgba(0,0,0,0.4); opacity:0; animation: fadeUp 0.9s ease forwards 0.55s; }
+.route-pills { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
+.pill { background: rgba(255,255,255,0.96); color: var(--blue-deep); border-radius: 100px; padding: 8px 16px; font-size: 14px; font-weight: 600; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+.pill.arrow { background: transparent; color: #fff; box-shadow: none; padding: 0 2px; font-size: 18px; }
+
+/* NAV */
+.timeline-nav { position: sticky; top: 0; z-index: 50; background: rgba(250,245,238,0.93); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; gap: 6px; overflow-x: auto; box-shadow: 0 2px 20px rgba(164,74,42,0.06); }
+.timeline-nav::-webkit-scrollbar { display: none; }
+.tnav-item { flex-shrink: 0; padding: 7px 16px; border-radius: 100px; font-size: 14px; font-weight: 600; cursor: pointer; color: var(--soft-ink); transition: all 0.2s; text-decoration: none; display:flex; flex-direction:column; align-items:center; line-height:1.25; }
+.tnav-item .nav-ar { font-family:'Cairo',sans-serif; direction:rtl; font-size:13px; font-weight:600; color:var(--muted); }
+.tnav-item:hover { background: var(--cream); color: var(--terra-deep); }
+.tnav-item:hover .nav-ar { color: var(--terra); }
+
+/* SECTION INTRO */
+.section-intro { padding: 72px 40px 8px; max-width: 880px; }
+.section-intro .tag { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+.section-intro h2 { font-family: 'Fraunces', serif; font-size: clamp(2.1rem, 5.5vw, 3.6rem); font-weight: 900; line-height: 1.04; color: var(--blue-deep); }
+.section-intro h2 .ar-h { font-size: 0.62em; }
+.section-intro p { margin-top: 14px; font-size: 1.1rem; line-height: 1.65; color: var(--soft-ink); }
+.section-intro p .ar-sub { font-size: 1.02rem; margin-top: 8px; }
+
+/* OVERVIEW STATS */
+.overview { padding: 40px 40px 10px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+.stat-card { background: var(--paper); border: 1px solid var(--border); border-radius: 18px; padding: 20px 22px; box-shadow: 0 8px 22px rgba(164,74,42,0.06); }
+.stat-card .ico { font-size: 1.6rem; }
+.stat-card .big { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: var(--terra-deep); margin-top: 6px; line-height: 1; }
+.stat-card .lbl { font-size: 0.92rem; color: var(--soft-ink); margin-top: 5px; }
+.stat-card .ar-sub { margin-top: 4px; }
+
+/* DAY CARDS */
+.days { padding: 30px 40px 10px; display: flex; flex-direction: column; gap: 26px; }
+.day-card { background: var(--paper); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; box-shadow: 0 14px 40px rgba(164,74,42,0.09); display: grid; grid-template-columns: 42% 1fr; }
+.day-photo { position: relative; overflow: hidden; min-height: 260px; }
+.day-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.day-card:hover .day-photo img { transform: scale(1.04); }
+.day-date { position: absolute; top: 18px; left: 18px; background: var(--ochre); color: #fff; font-weight: 700; font-size: 14px; padding: 8px 16px; border-radius: 100px; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+.day-date .ar { font-weight:700; }
+.day-body { padding: 28px 32px; }
+.day-title { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 900; color: var(--blue-deep); line-height: 1.05; }
+.day-title .ar-h { font-size: 0.62em; margin-top:4px; }
+.day-sub { font-size: 0.95rem; color: var(--terra); font-weight: 600; margin: 6px 0 18px; }
+.day-sub .ar { font-weight:600; }
+.plan { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.plan li { display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: start; }
+.plan .when { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.02em; text-transform: uppercase; color: #fff; background: var(--blue); padding: 5px 8px; border-radius: 8px; text-align: center; white-space: nowrap; }
+.plan .what { font-size: 1.02rem; color: var(--ink); padding-top: 2px; }
+.plan .what b { color: var(--terra-deep); }
+.day-thumbs { display: flex; gap: 8px; margin-top: 18px; }
+.day-thumbs img { width: 100%; height: 78px; object-fit: cover; border-radius: 10px; flex: 1; }
+.note-soft { margin-top: 16px; font-size: 0.95rem; color: var(--soft-ink); background: var(--cream); border-radius: 12px; padding: 12px 16px; }
+.note-soft b { color: var(--terra-deep); }
+
+/* FLIGHT BANNER */
+.flight { margin: 36px 40px; border-radius: 24px; overflow: hidden; position: relative; min-height: 240px; display: flex; align-items: center; }
+.flight img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.flight::after { content:''; position:absolute; inset:0; background: linear-gradient(90deg, rgba(29,68,82,0.92), rgba(29,68,82,0.55)); }
+.flight-content { position: relative; z-index: 2; color: #fff; padding: 34px 40px; }
+.flight-content .tag { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.9; }
+.flight-content h3 { font-family:'Fraunces',serif; font-size: clamp(1.6rem,4vw,2.4rem); font-weight:900; margin:8px 0 6px; }
+.flight-content .ar-h { color:#fff; font-size:1.2rem; margin-bottom:14px; }
+.flight-facts { display:flex; flex-wrap:wrap; gap:10px; }
+.flight-facts span { background: rgba(255,255,255,0.18); backdrop-filter: blur(6px); padding:8px 15px; border-radius:100px; font-size:15px; font-weight:600; }
+
+/* HIGHLIGHT GRID (Séville) */
+.hl-section { padding: 30px 40px 0; }
+.hl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 18px; }
+.hl-card { background: var(--paper); border:1px solid var(--border); border-radius: 20px; overflow:hidden; box-shadow: 0 10px 30px rgba(164,74,42,0.08); }
+.hl-card .imgw { overflow:hidden; height: 200px; }
+.hl-card img { width:100%; height:100%; object-fit:cover; transition: transform .7s ease; }
+.hl-card:hover img { transform: scale(1.05); }
+.hl-card .txt { padding: 18px 22px 22px; }
+.hl-card h4 { font-family:'Fraunces',serif; font-size:1.4rem; font-weight:900; color:var(--blue-deep); line-height:1.05; }
+.hl-card h4 .ar-h { font-size:0.7em; margin-top:4px; }
+.hl-card p { font-size: 0.98rem; color: var(--soft-ink); margin-top: 7px; }
+.hl-card .chip { display:inline-block; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--terra); margin-bottom:8px; }
+
+/* AIRBNB BOX */
+.stay { margin: 26px 40px 0; background: linear-gradient(135deg, var(--cream), #f7eee1); border:1px solid var(--border); border-radius: 20px; padding: 26px 30px; display:flex; gap:20px; align-items:flex-start; }
+.stay .ico { font-size: 2.4rem; }
+.stay h4 { font-family:'Fraunces',serif; font-size:1.5rem; font-weight:900; color:var(--blue-deep); }
+.stay h4 .ar-h { font-size:0.7em; margin-top:3px; }
+.stay p { font-size:1rem; color:var(--soft-ink); margin-top:8px; }
+.stay b { color: var(--terra-deep); }
+
+/* EXCURSIONS */
+.exc-section { padding: 30px 40px 0; display:flex; flex-direction:column; gap: 22px; }
+.exc-card { background: var(--paper); border:1px solid var(--border); border-radius: 24px; overflow:hidden; box-shadow: 0 14px 40px rgba(164,74,42,0.09); display:grid; grid-template-columns: 1fr 42%; }
+.exc-card.flip { grid-template-columns: 42% 1fr; }
+.exc-card .imgw { overflow:hidden; min-height: 260px; }
+.exc-card img { width:100%; height:100%; object-fit:cover; transition: transform .7s ease; }
+.exc-card:hover img { transform: scale(1.04); }
+.exc-card .txt { padding: 30px 34px; }
+.exc-card .chip { font-family:'DM Mono',monospace; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--terra); }
+.exc-card h3 { font-family:'Fraunces',serif; font-size: clamp(1.7rem,4vw,2.4rem); font-weight:900; color:var(--blue-deep); margin:7px 0 6px; }
+.exc-card h3 .ar-h { font-size:0.55em; }
+.exc-card p { font-size:1.05rem; color:var(--soft-ink); margin-top:6px; }
+.exc-card ul { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:9px; }
+.exc-card ul li { display:flex; gap:10px; font-size:1rem; color:var(--ink); }
+.exc-card ul li .b { width:7px; height:7px; border-radius:50%; background:var(--terra); flex-shrink:0; margin-top:8px; }
+.badge-opt { display:inline-block; background:var(--ochre); color:#fff; font-size:12px; font-weight:700; padding:4px 12px; border-radius:100px; margin-left:8px; vertical-align:middle; }
+
+/* SPLIT / FIN */
+.split { margin: 40px 40px 0; background: var(--blue-deep); color:#fff; border-radius:24px; padding: 40px; }
+.split h3 { font-family:'Fraunces',serif; font-size: clamp(1.6rem,4vw,2.3rem); font-weight:900; margin-bottom: 4px; }
+.split h3 .ar-h { color:#fff; font-size:0.6em; }
+.split .lead { opacity:0.9; font-size:1.05rem; max-width:640px; }
+.split .lead .ar-sub { color:rgba(255,255,255,0.8); }
+.split-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+.split-card { background: rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); border-radius:16px; padding:22px 24px; }
+.split-card .ico { font-size:1.8rem; }
+.split-card h4 { font-family:'Fraunces',serif; font-size:1.3rem; font-weight:900; margin:8px 0 4px; }
+.split-card h4 .ar-h { color:#fff; font-size:0.72em; }
+.split-card p { font-size:0.98rem; opacity:0.9; margin-top:6px; }
+.split-card .ar-sub { color:rgba(255,255,255,0.82); }
+.opt-list { list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:6px; }
+.opt-list li { background:rgba(255,255,255,0.08); border-radius:12px; padding:12px 14px; }
+.opt-list .opt-lbl { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ochre); }
+
+/* INFOS */
+.infos { padding: 30px 40px 10px; }
+.info-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; }
+.info-card { background: var(--paper); border:1px solid var(--border); border-radius:18px; padding:22px 24px; box-shadow:0 8px 22px rgba(164,74,42,0.06); }
+.info-card h4 { font-size:1.05rem; font-weight:700; color:var(--blue-deep); margin-bottom:4px; display:flex; align-items:center; gap:9px; }
+.info-card .ar-h { font-size:0.95rem; margin:2px 0 12px; color:var(--terra); }
+.info-card ul { list-style:none; display:flex; flex-direction:column; gap:11px; }
+.info-card ul li { font-size:0.98rem; color:var(--soft-ink); }
+.info-card ul li .fr { display:flex; gap:9px; align-items:flex-start; }
+.info-card ul li .fr::before { content:'•'; color:var(--terra); font-weight:700; }
+
+footer { margin-top: 60px; background: linear-gradient(135deg, var(--terra-deep), var(--terra)); color:#fff; padding: 48px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.footer-brand { font-family:'Fraunces',serif; font-size:1.6rem; font-style:italic; }
+.footer-brand .ar { font-style:normal; font-size:1.2rem; font-weight:600; display:block; margin-top:4px; }
+.footer-meta { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.1em; opacity:0.9; }
+
+@keyframes fadeUp { from { opacity:0; transform: translateY(20px);} to {opacity:1; transform:translateY(0);} }
+.fade-in { opacity:0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.fade-in.visible { opacity:1; transform: translateY(0); }
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .hero { padding: 40px 22px; }
+  .timeline-nav, .section-intro, .overview, .days, .hl-section, .exc-section, .infos { padding-left: 20px; padding-right: 20px; }
+  .day-card, .exc-card, .exc-card.flip { grid-template-columns: 1fr; }
+  .day-photo { min-height: 220px; }
+  .exc-card .imgw, .exc-card.flip .imgw { min-height: 220px; order: -1; }
+  .day-body, .exc-card .txt { padding: 24px 22px; }
+  .flight, .stay, .split { margin-left: 20px; margin-right: 20px; }
+  .stay { flex-direction: column; gap: 12px; }
+  .split { padding: 30px 24px; }
+  .split-grid { grid-template-columns: 1fr; }
+  .plan li { grid-template-columns: 78px 1fr; gap: 11px; }
+  footer { padding: 36px 22px; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Programme Famille · Juillet 2026</div>
+    <h1>Vacances en Famille<br><em>Paris &amp; Andalousie</em></h1>
+    <div class="hero-ar">عطلة عائلية · باريس والأندلس · يوليو 2026</div>
+    <div class="route-pills">
+      <span class="pill">🇫🇷 Paris</span><span class="pill arrow">→</span>
+      <span class="pill">🇪🇸 Séville</span><span class="pill arrow">→</span>
+      <span class="pill">🕌 Cordoue</span><span class="pill arrow">→</span>
+      <span class="pill">🌊 Cadix</span><span class="pill arrow">→</span>
+      <span class="pill">🇲🇦 Maroc</span>
+    </div>
+  </div>
+</section>
+
+<nav class="timeline-nav">
+  <a class="tnav-item" href="#apercu">🗺️ Aperçu<span class="nav-ar">نظرة عامة</span></a>
+  <a class="tnav-item" href="#paris">🇫🇷 Paris<span class="nav-ar">باريس</span></a>
+  <a class="tnav-item" href="#seville">🇪🇸 Séville<span class="nav-ar">إشبيلية</span></a>
+  <a class="tnav-item" href="#excursions">🚌 Excursions<span class="nav-ar">رحلات</span></a>
+  <a class="tnav-item" href="#fin">✈️ Fin du séjour<span class="nav-ar">نهاية الرحلة</span></a>
+  <a class="tnav-item" href="#infos">ℹ️ Infos<span class="nav-ar">معلومات</span></a>
+</nav>
+
+<!-- APERÇU -->
+<section id="apercu" class="fade-in">
+  <div class="section-intro">
+    <div class="tag">L'itinéraire en bref</div>
+    <h2>Notre voyage, étape par étape<span class="ar-h">رحلتنا، مرحلة بمرحلة</span></h2>
+    <p>Rachid et Rabiaa arrivent du Maroc à Paris. Après quelques jours dans la capitale tous ensemble, nous partons à Séville, en Andalousie, dans un appartement loué pour 6 jours. Au programme : monuments, spectacle de flamenco, et des excursions à Cordoue et peut-être Cadix. À la fin, Rachid, Rabiaa et Ikram repartent au Maroc, et Loubna rentre à Paris. <b>Ce programme n'est qu'une suggestion : on peut modifier les activités selon nos envies.</b>
+    <span class="ar-sub">يصل رشيد ورابعة من المغرب إلى باريس. بعد بضعة أيام في العاصمة جميعاً، نسافر إلى إشبيلية في الأندلس، في شقة مستأجرة لمدة 6 أيام. البرنامج: زيارة المعالم، وعرض الفلامنكو، ورحلات إلى قرطبة وربما قادس. وفي النهاية، يعود رشيد ورابعة وإكرام إلى المغرب، وتعود لبنى إلى باريس. <b>هذا البرنامج مجرّد اقتراح: يمكننا تعديل الأنشطة حسب رغبتنا.</b></span></p>
+  </div>
+  <div class="overview">
+    <div class="stat-grid">
+      <div class="stat-card"><div class="ico">🛬</div><div class="big">Jeu. 9 juil.</div><div class="lbl">Arrivée à Paris (12h30)</div><span class="ar-sub">الخميس 9 يوليو · الوصول إلى باريس</span></div>
+      <div class="stat-card"><div class="ico">🥖</div><div class="big">6 jours</div><div class="lbl">à Paris en famille</div><span class="ar-sub">6 أيام في باريس مع العائلة</span></div>
+      <div class="stat-card"><div class="ico">✈️</div><div class="big">Mer. 15 juil.</div><div class="lbl">Envol vers Séville</div><span class="ar-sub">الأربعاء 15 يوليو · الطيران إلى إشبيلية</span></div>
+      <div class="stat-card"><div class="ico">☀️</div><div class="big">6 jours</div><div class="lbl">en Andalousie</div><span class="ar-sub">6 أيام في الأندلس</span></div>
+      <div class="stat-card"><div class="ico">🧳</div><div class="big">Lun. 20 juil.</div><div class="lbl">Maroc · retour Paris</div><span class="ar-sub">الإثنين 20 يوليو · المغرب والعودة إلى باريس</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARIS -->
+<section id="paris">
+  <div class="section-intro fade-in">
+    <div class="tag">Étape 1 · Du jeudi 9 au mercredi 15 juillet</div>
+    <h2>Paris 🇫🇷<span class="ar-h">باريس</span></h2>
+    <p>Six jours pour profiter de Paris tranquillement et visiter les plus beaux endroits de la ville.
+    <span class="ar-sub">ستة أيام للاستمتاع بباريس بهدوء وزيارة أجمل أماكن المدينة.</span></p>
+  </div>
+
+  <div class="days">
+
+    <!-- JEUDI -->
+    <article class="day-card fade-in">
+      <div class="day-photo"><img src="trip_images/paris_balade.jpg" alt="Rue de Paris"><div class="day-date">Jeudi 9 juil. · <span class="ar">الخميس 9 يوليو</span></div></div>
+      <div class="day-body">
+        <div class="day-title">Arrivée &amp; repos<span class="ar-h">الوصول والراحة</span></div>
+        <div class="day-sub">On se pose en douceur · <span class="ar">نبدأ بهدوء</span></div>
+        <ul class="plan">
+          <li><span class="when">12h30</span><span class="what">Atterrissage à <b>Paris</b> ✈️<span class="ar-sub">الوصول إلى باريس</span></span></li>
+          <li><span class="when">Après-midi</span><span class="what">Repos à la maison après le voyage<span class="ar-sub">الراحة في البيت بعد السفر</span></span></li>
+          <li><span class="when">Soir</span><span class="what">Petite balade vers <b>Nation</b> et <b>Bastille</b><span class="ar-sub">نزهة قصيرة نحو ناسيون وباستيل</span></span></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- VENDREDI -->
+    <article class="day-card fade-in">
+      <div class="day-photo"><img src="trip_images/louvre.jpg" alt="Musée du Louvre"><div class="day-date">Vendredi 10 juil. · <span class="ar">الجمعة 10 يوليو</span></div></div>
+      <div class="day-body">
+        <div class="day-title">Le cœur de Paris<span class="ar-h">قلب باريس</span></div>
+        <div class="day-sub">Musées, jardins et grandes avenues · <span class="ar">متاحف وحدائق وجادات كبيرة</span></div>
+        <ul class="plan">
+          <li><span class="when">Matin</span><span class="what">Repos tranquille<span class="ar-sub">راحة هادئة</span></span></li>
+          <li><span class="when">Journée</span><span class="what"><b>Musée du Louvre</b> 🖼️, jardin des Tuileries, place de la Concorde et <b>Champs-Élysées</b><span class="ar-sub">متحف اللوفر، حديقة التويلري، ساحة الكونكورد، والشانزليزيه</span></span></li>
+          <li><span class="when">Soir</span><span class="what">Dîner au restaurant <b>Hadramout</b> 🍽️<span class="ar-sub">العشاء في مطعم حضرموت</span></span></li>
+        </ul>
+        <div class="day-thumbs">
+          <img src="trip_images/champs.jpg" alt="Arc de Triomphe et Champs-Élysées">
+          <img src="trip_images/diner.jpg" alt="Dîner au restaurant">
+        </div>
+      </div>
+    </article>
+
+    <!-- SAMEDI -->
+    <article class="day-card fade-in">
+      <div class="day-photo"><img src="trip_images/diner.jpg" alt="Restaurant"><div class="day-date">Samedi 11 juil. · <span class="ar">السبت 11 يوليو</span></div></div>
+      <div class="day-body">
+        <div class="day-title">Détente &amp; shopping<span class="ar-h">استرخاء وتسوّق</span></div>
+        <div class="day-sub">Une journée plus légère · <span class="ar">يوم أخف</span></div>
+        <ul class="plan">
+          <li><span class="when">Matin</span><span class="what">Libre (au choix)<span class="ar-sub">وقت حر (نختار ما يناسبنا)</span></span></li>
+          <li><span class="when">Midi</span><span class="what">Restaurant <b>chinois à volonté</b> 🥟<span class="ar-sub">مطعم صيني (بوفيه مفتوح)</span></span></li>
+          <li><span class="when">Après-midi</span><span class="what">Shopping chez <b>Primark</b> 🛍️<span class="ar-sub">تسوّق في بريمارك</span></span></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- DIMANCHE -->
+    <article class="day-card fade-in">
+      <div class="day-photo"><img src="trip_images/seine.jpg" alt="La Seine à Paris"><div class="day-date">Dimanche 12 juil. · <span class="ar">الأحد 12 يوليو</span></div></div>
+      <div class="day-body">
+        <div class="day-title">Grande journée parisienne<span class="ar-h">يوم باريسي حافل</span></div>
+        <div class="day-sub">Croisière, Tour Eiffel et Montmartre · <span class="ar">جولة بحرية، برج إيفل ومونمارتر</span></div>
+        <ul class="plan">
+          <li><span class="when">Matin</span><span class="what"><b>Croisière brunch</b> sur la Seine 🛥️<span class="ar-sub">جولة بحرية مع فطور على نهر السين</span></span></li>
+          <li><span class="when">Après-midi</span><span class="what"><b>Tour Eiffel</b> 🗼<span class="ar-sub">برج إيفل</span></span></li>
+          <li><span class="when">Pause</span><span class="what">Repos à la maison<span class="ar-sub">راحة في البيت</span></span></li>
+          <li><span class="when">Soir</span><span class="what"><b>Sacré-Cœur</b> &amp; Montmartre<span class="ar-sub">كنيسة القلب المقدّس ومونمارتر</span></span></li>
+        </ul>
+        <div class="day-thumbs">
+          <img src="trip_images/eiffel.jpg" alt="Tour Eiffel">
+          <img src="trip_images/sacrecoeur.jpg" alt="Basilique du Sacré-Cœur">
+        </div>
+      </div>
+    </article>
+
+    <!-- LUNDI -->
+    <article class="day-card fade-in">
+      <div class="day-photo"><img src="trip_images/notredame.jpg" alt="Notre-Dame de Paris"><div class="day-date">Lundi 13 juil. · <span class="ar">الإثنين 13 يوليو</span></div></div>
+      <div class="day-body">
+        <div class="day-title">Paris historique<span class="ar-h">باريس التاريخية</span></div>
+        <div class="day-sub">Journée tranquille au bord de la Seine · <span class="ar">يوم هادئ على ضفاف نهر السين</span></div>
+        <ul class="plan">
+          <li><span class="when">Journée</span><span class="what">Repos / journée libre<span class="ar-sub">راحة / يوم حر</span></span></li>
+          <li><span class="when">Balade</span><span class="what">Bords de <b>Seine</b>, quartier <b>Saint-Michel</b> et <b>Notre-Dame</b> ⛪<span class="ar-sub">ضفاف نهر السين، حيّ سان ميشيل وكاتدرائية نوتردام</span></span></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- MARDI -->
+    <article class="day-card fade-in">
+      <div class="day-photo"><img src="trip_images/fireworks.jpg" alt="Feu d'artifice du 14 juillet"><div class="day-date">Mardi 14 juil. · <span class="ar">الثلاثاء 14 يوليو</span></div></div>
+      <div class="day-body">
+        <div class="day-title">Fête nationale 🎆<span class="ar-h">العيد الوطني الفرنسي</span></div>
+        <div class="day-sub">Le 14 juillet à Paris · <span class="ar">14 يوليو في باريس</span></div>
+        <ul class="plan">
+          <li><span class="when">Journée</span><span class="what">Libre<span class="ar-sub">يوم حر</span></span></li>
+          <li><span class="when">Soir</span><span class="what">Spectacle &amp; <b>feu d'artifice du 14 juillet</b><span class="ar-sub">عرض وألعاب نارية بمناسبة 14 يوليو</span></span></li>
+        </ul>
+        <div class="note-soft">☕ <b>En option :</b> un arrêt au célèbre <b>Café de la Paix</b>.<span class="ar-sub">اختياري: زيارة مقهى دو لا بيه الشهير.</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- VOL -->
+<div class="flight fade-in">
+  <img src="trip_images/avion.jpg" alt="Avion">
+  <div class="flight-content">
+    <div class="tag">Mercredi 15 juillet · Direction l'Andalousie</div>
+    <h3>Paris ✈️ Séville</h3>
+    <div class="ar-h">الأربعاء 15 يوليو · باريس ✈️ إشبيلية</div>
+    <div class="flight-facts">
+      <span>🛫 9h45 → 12h30</span>
+      <span>💶 157 € / pers.</span>
+      <span>🎒 Bagage cabine</span>
+      <span>🏠 Arrivée à l'appartement vers 15h</span>
+    </div>
+  </div>
+</div>
+
+<!-- SÉVILLE -->
+<section id="seville">
+  <div class="section-intro fade-in">
+    <div class="tag">Étape 2 · Du mercredi 15 au lundi 20 juillet</div>
+    <h2>Séville &amp; l'Andalousie 🇪🇸<span class="ar-h">إشبيلية والأندلس</span></h2>
+    <p>Notre base pour 6 jours. Séville est une ville magnifique où tout se visite à pied : palais mauresques, cathédrale, places fleuries et soirées de flamenco. Bon à savoir : il fait chaud en juillet.
+    <span class="ar-sub">مقرّنا لمدة 6 أيام. إشبيلية مدينة رائعة يمكن زيارتها كلها سيراً على الأقدام: قصور أندلسية، كاتدرائية، ساحات مزهرة وأمسيات فلامنكو. للعلم: الجوّ حارّ في يوليو.</span></p>
+  </div>
+
+  <div class="hl-section">
+    <div class="hl-grid">
+      <article class="hl-card fade-in">
+        <div class="imgw"><img src="trip_images/alcazar.jpg" alt="Real Alcázar de Séville"></div>
+        <div class="txt"><span class="chip">Palais royal</span><h4>Real Alcázar<span class="ar-h">قصر الكازار الملكي</span></h4><p>Splendide palais aux jardins et patios mauresques. Réservez vos billets à l'avance.<span class="ar-sub">قصر رائع بحدائق وأفنية أندلسية. احجزوا التذاكر مسبقاً.</span></p></div>
+      </article>
+      <article class="hl-card fade-in">
+        <div class="imgw"><img src="trip_images/giralda.jpg" alt="Cathédrale de Séville et la Giralda"></div>
+        <div class="txt"><span class="chip">Monument</span><h4>Cathédrale &amp; Giralda<span class="ar-h">الكاتدرائية وبرج الخيرالدا</span></h4><p>La plus grande cathédrale gothique du monde. On peut monter en haut de la tour Giralda.<span class="ar-sub">أكبر كاتدرائية قوطية في العالم. يمكن صعود برج الخيرالدا.</span></p></div>
+      </article>
+      <article class="hl-card fade-in">
+        <div class="imgw"><img src="trip_images/plaza_espana.jpg" alt="Plaza de España de Séville"></div>
+        <div class="txt"><span class="chip">Incontournable</span><h4>Plaza de España<span class="ar-h">ساحة إسبانيا</span></h4><p>Une place immense et magnifique, encore plus belle en fin d'après-midi.<span class="ar-sub">ساحة ضخمة وجميلة، أجمل في نهاية النهار.</span></p></div>
+      </article>
+      <article class="hl-card fade-in">
+        <div class="imgw"><img src="trip_images/flamenco.jpg" alt="Spectacle de flamenco"></div>
+        <div class="txt"><span class="chip">Soirée</span><h4>Spectacle de flamenco 💃<span class="ar-h">عرض الفلامنكو</span></h4><p>Un moment fort de l'Andalousie : musique, chant et danse passionnés.<span class="ar-sub">لحظة مميّزة في الأندلس: موسيقى وغناء ورقص بحماس.</span></p></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="stay fade-in">
+    <div class="ico">🏠</div>
+    <div>
+      <h4>Notre appartement (Airbnb)<span class="ar-h">شقتنا (Airbnb)</span></h4>
+      <p>Réservé pour <b>6 jours, du mercredi 15 au lundi 20 juillet</b> · <b>710 €</b> au total. Idéal pour être ensemble et bien situé pour tout faire à pied. ⚠️ Vérifiez que la <b>climatisation</b> fonctionne — indispensable en juillet !
+      <span class="ar-sub">محجوزة لمدة 6 أيام، من الأربعاء 15 إلى الإثنين 20 يوليو · 710 يورو إجمالاً. مثالية لنكون معاً، وقريبة من كل شيء سيراً على الأقدام. ⚠️ تأكدوا من عمل المكيّف — ضروري في يوليو!</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- EXCURSIONS -->
+<section id="excursions">
+  <div class="section-intro fade-in">
+    <div class="tag">Au départ de Séville</div>
+    <h2>Excursions d'une journée<span class="ar-h">رحلات ليوم واحد</span></h2>
+    <p>Deux belles villes à découvrir à la journée, faciles d'accès depuis Séville en train ou en bus.
+    <span class="ar-sub">مدينتان جميلتان لزيارتهما في يوم واحد، يسهل الوصول إليهما من إشبيلية بالقطار أو الحافلة.</span></p>
+  </div>
+
+  <div class="exc-section">
+    <article class="exc-card fade-in">
+      <div class="txt">
+        <span class="chip">Excursion 1 · 1 journée</span>
+        <h3>Cordoue 🕌<span class="ar-h">قرطبة</span></h3>
+        <p>La ville de la fameuse Mosquée-Cathédrale, avec ses centaines de colonnes et ses arches rouges et blanches — un lieu unique au monde.<span class="ar-sub">مدينة المسجد-الكاتدرائية الشهير، بمئات الأعمدة وأقواسه الحمراء والبيضاء — مكان فريد في العالم.</span></p>
+        <ul>
+          <li><span class="b"></span> La <b>Mezquita</b> (Mosquée-Cathédrale) · <span class="ar">مسجد قرطبة</span></li>
+          <li><span class="b"></span> Le quartier juif (Judería) et ses ruelles fleuries · <span class="ar">الحيّ اليهودي وأزقته المزهرة</span></li>
+          <li><span class="b"></span> Le pont romain sur le Guadalquivir · <span class="ar">الجسر الروماني على نهر الوادي الكبير</span></li>
+          <li><span class="b"></span> ~45 min en train rapide depuis Séville · <span class="ar">حوالي 45 دقيقة بالقطار السريع</span></li>
+        </ul>
+      </div>
+      <div class="imgw"><img src="trip_images/mezquita.jpg" alt="Mezquita de Cordoue"></div>
+    </article>
+
+    <article class="exc-card flip fade-in">
+      <div class="imgw"><img src="trip_images/cadix.jpg" alt="Cadix"></div>
+      <div class="txt">
+        <span class="chip">Excursion 2 · 1 journée</span>
+        <h3>Cadix 🌊<span class="badge-opt">si on a le temps</span><span class="ar-h">قادس — إذا توفّر الوقت</span></h3>
+        <p>Une ville posée sur l'océan Atlantique, entourée d'eau de tous les côtés. Parfaite pour respirer l'air marin et profiter des plages.<span class="ar-sub">مدينة على المحيط الأطلسي، محاطة بالماء من كل الجهات. مثالية لنسيم البحر والشواطئ.</span></p>
+        <ul>
+          <li><span class="b"></span> La <b>plage de la Caleta</b> et les remparts · <span class="ar">شاطئ لا كاليتا والأسوار</span></li>
+          <li><span class="b"></span> La vieille ville et la cathédrale face à la mer · <span class="ar">المدينة القديمة والكاتدرائية المطلّة على البحر</span></li>
+          <li><span class="b"></span> Poisson frit local (<i>pescaíto frito</i>) 🐟 · <span class="ar">السمك المقلي المحلي</span></li>
+          <li><span class="b"></span> ~1h45 en train ou en bus depuis Séville · <span class="ar">حوالي ساعة و45 دقيقة بالقطار أو الحافلة</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- FIN DU SÉJOUR -->
+<div id="fin" class="split fade-in">
+  <h3>Lundi 20 juillet · On se sépare ✈️<span class="ar-h">الإثنين 20 يوليو · نفترق</span></h3>
+  <p class="lead">Après ces belles vacances ensemble, chacun reprend sa route.<span class="ar-sub">بعد هذه العطلة الجميلة معاً، يتابع كلٌّ طريقه.</span></p>
+  <div class="split-grid">
+    <div class="split-card">
+      <div class="ico">🇲🇦</div>
+      <h4>Rachid, Rabiaa &amp; Ikram<span class="ar-h">رشيد ورابعة وإكرام</span></h4>
+      <p>Retour vers le Maroc — deux possibilités :<span class="ar-sub">العودة إلى المغرب — خياران:</span></p>
+      <ul class="opt-list">
+        <li><span class="opt-lbl">Option 1</span><p>Vol direct vers le <b>Maroc</b> (horaire à confirmer).<span class="ar-sub">رحلة طيران مباشرة إلى المغرب (الموعد لم يُحدَّد بعد).</span></p></li>
+        <li><span class="opt-lbl">Option 2</span><p>Ferry vers <b>Ceuta</b> 🛳️ pour faire quelques achats, puis passage au Maroc.<span class="ar-sub">عبّارة إلى سبتة للتسوّق، ثم العبور إلى المغرب.</span></p></li>
+      </ul>
+    </div>
+    <div class="split-card">
+      <div class="ico">🇫🇷</div>
+      <h4>Loubna<span class="ar-h">لبنى</span></h4>
+      <p>Retour à <b>Paris</b>.<span class="ar-sub">العودة إلى باريس.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- INFOS -->
+<section id="infos">
+  <div class="section-intro fade-in">
+    <div class="tag">À retenir</div>
+    <h2>Infos pratiques<span class="ar-h">معلومات مفيدة</span></h2>
+  </div>
+  <div class="infos">
+    <div class="info-grid">
+      <div class="info-card fade-in">
+        <h4>💶 Quelques prix</h4><div class="ar-h">بعض الأسعار</div>
+        <ul>
+          <li><div class="fr">Vol Paris → Séville : <b>157 € / pers.</b> (bagage cabine)</div><span class="ar-sub">رحلة باريس-إشبيلية: 157 يورو للشخص (حقيبة يد)</span></li>
+          <li><div class="fr">Appartement Séville : <b>710 €</b> (6 nuits)</div><span class="ar-sub">شقة إشبيلية: 710 يورو (6 ليالٍ)</span></li>
+        </ul>
+      </div>
+      <div class="info-card fade-in">
+        <h4>☀️ Chaleur en Andalousie</h4><div class="ar-h">الحرارة في الأندلس</div>
+        <ul>
+          <li><div class="fr">Visiter le matin (8h–12h) et le soir (18h–22h)</div><span class="ar-sub">الزيارة صباحاً (8–12) ومساءً (18–22)</span></li>
+          <li><div class="fr">Beaucoup d'eau, chapeau et crème solaire</div><span class="ar-sub">ماء كثير، قبعة وكريم واقٍ من الشمس</span></li>
+          <li><div class="fr">Sieste l'après-midi quand il fait le plus chaud</div><span class="ar-sub">قيلولة بعد الظهر وقت اشتداد الحرّ</span></li>
+        </ul>
+      </div>
+      <div class="info-card fade-in">
+        <h4>🎟️ À réserver à l'avance</h4><div class="ar-h">للحجز مسبقاً</div>
+        <ul>
+          <li><div class="fr">Real Alcázar &amp; Cathédrale (Séville)</div><span class="ar-sub">قصر الكازار والكاتدرائية (إشبيلية)</span></li>
+          <li><div class="fr">Spectacle de flamenco</div><span class="ar-sub">عرض الفلامنكو</span></li>
+        </ul>
+      </div>
+      <div class="info-card fade-in">
+        <h4>🧳 À ne pas oublier</h4><div class="ar-h">لا تنسوا</div>
+        <ul>
+          <li><div class="fr">Passeports / cartes d'identité</div><span class="ar-sub">جوازات السفر / بطاقات الهوية</span></li>
+          <li><div class="fr">Vêtements légers &amp; lunettes de soleil</div><span class="ar-sub">ملابس خفيفة ونظارات شمسية</span></li>
+          <li><div class="fr">Chargeurs &amp; adaptateurs</div><span class="ar-sub">الشواحن والمحوّلات</span></li>
+          <li><div class="fr">Médicaments / ordonnances</div><span class="ar-sub">الأدوية / الوصفات الطبية</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Bonnes vacances en famille ☀️<span class="ar">عطلة سعيدة للعائلة</span></div>
+  <div class="footer-meta">PARIS → SÉVILLE → MAROC · JUILLET 2026</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
